@@ -1,13 +1,376 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Define a viewport para responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Consultoria Nutricional</title>
+    <!-- Importa o CSS do Bootstrap para estilização -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Importa o CSS do Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Importa o CSS dos estilos gerais -->
+    <link rel="stylesheet" href="src/estilos/EstilosGerais.css">
+    <!-- Importa o CSS dos nossos serviços -->
+    <link rel="stylesheet" href="src/estilos/NossosServicos.css">
+    <!-- Importa o CSS da parte conheça nosso trabalho -->
+    <link rel="stylesheet" href="src/estilos/ConhecaNossoTrabalho.css">
+    <!-- Importa o CSS dos Quadradinhos -->
+    <link rel="stylesheet" href="src/estilos/Quadradinhos.css">
+    <!-- Importa o CSS do rodapé -->
+    <link rel="stylesheet" href="src/estilos/Rodape.css">
+    <!-- Importa o CSS para telas menores-->
+    <link rel="stylesheet" href="src/estilos/TelasMenores.css">
+    <!-- Importa jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Importa Popper.js, necessário para o Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Importa o JavaScript do Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1>Consultoria Nutricional</h1>
+            <nav class="d-flex justify-content-center align-items-center">
+                <!-- Atualização dos links -->
+                <a href="#Colecao">Coleção</a>
+                <a href="src/receitas.html">Receitas</a>
+                <a href="src/exames.html">Exames</a>
+                <a href="src/imc.html">IMC</a>
+                <a href="src/produtos.html">Produtos</a>
+                <a href="#Contato">Contato</a>
+                <a href="src/login.html" class="btn btn-outline-light ml-3">Login e Cadastro</a>
+            </nav>
+        </div>
+    </header>
+    <section id="banner" class="mb-4">
+        <!-- Carrossel de imagens -->
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="src/imagens/talvez banner.jpg" class="d-block w-100 banner-img" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="src/imagens/possivel banner.jpg" class="d-block w-100 banner-img" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="src/imagens/muito banner.jpg" class="d-block w-100 banner-img" alt="Banner 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="src/imagens/Banner 04.jpeg" class="d-block w-100 banner-img last-banner" alt="Banner 4">
+                </div>
+            </div>
+            <!-- Controles do carrossel -->
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Seção dos quadradinhos -->
+    <section class="text-center mb-4">
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <!-- Quadradinho 1: Vida Saudável -->
+            <div class="quadradinho">
+                <img src="src/imagens/1587922-74104c35.png" alt="Vida Saudável">
+                <h3>Vida Saudável</h3>
+                <p>Descubra como cultivar hábitos que promovem o bem-estar físico e mental. Aqui, você encontrará dicas de alimentação equilibrada, receitas nutritivas e sugestões de exercícios. Pequenas mudanças podem levar a grandes resultados para uma vida mais plena e ativa!</p>
+            </div>
+            
+            <!-- Quadradinho 2: Nossos Princípios -->
+            <div class="quadradinho">
+                <img src="src/imagens/3373025-6b0b95ff.png" alt="Nossos Princípios">
+                <h3>Nossos Princípios</h3>
+                <p>Valorizamos uma alimentação equilibrada que promove saúde a longo prazo e defendemos uma abordagem holística que considera alimentação, atividade física e saúde mental.</p>
+            </div>
+            
+            <!-- Quadradinho 3: Agricultura Ecológica -->
+            <div class="quadradinho">
+                <img src="src/imagens/3462063-9a73c540.png" alt="Agricultura Ecológica">
+                <h3>Agricultura Ecológica</h3>
+                <p>Nossos produtos são cultivados com métodos sustentáveis, garantindo qualidade e respeito ao meio ambiente. A agricultura ecológica é essencial para um futuro mais saudável.</p>
+            </div>
+            
+            <!-- Quadradinho 4: Boa Comida -->
+            <div class="quadradinho">
+                <img src="src/imagens/1880202-a2dd130f.png" alt="Boa Comida">
+                <h3>Boa Comida</h3>
+                <p>Acreditamos que boa comida é aquela que une sabor e nutrição. Neste espaço, celebramos receitas que não apenas agradam ao paladar, mas também nutrem o corpo.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Seção "Conheça Nosso Trabalho" -->
+    <section class="text-center mb-4 fade-in highlight-background">
+        <div class="content-container d-flex align-items-center flex-wrap justify-content-between">
+            <!-- "Quem Somos?" à esquerda -->
+            <div class="text-container col-12 col-md-6 mb-3 mb-md-0 text-left">
+                <h3 class="titulo-introdução"><b>Conheça Nosso Trabalho</b></h3>
+                <p class="paragrafo">
+                    Bem-vindo à nossa clínica de nutrição, um espaço dedicado à promoção da saúde e do bem-estar por meio da alimentação consciente e equilibrada.
+                </p>
+                <h3 class="titulo-introdução"><b>Quem Somos?</b></h3>
+                <p class="paragrafo">
+                    Nossa filosofia é baseada na educação nutricional e no empoderamento. Buscamos proporcionar hábitos saudáveis que melhorem a saúde física, mental e emocional.
+                </p>
+            </div>
+            
+            <!-- Imagem à direita -->
+            <div class="image-container col-12 col-md-5">
+                <img src="src/imagens/fitness-healthy-lifestyle-concep.jpg" alt="Imagem da Clínica" class="img-fluid hover-effect rounded-lg shadow-sm">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção "Nossos Serviços" -->
+    <section class="bg-light py-5 services-container">
+        <div class="services-section text-center fade-in">
+            <h2 class="titulo-introdução"><b>Nossos Serviços</b></h2>
+            <p class="paragrafo">Oferecemos uma ampla gama de serviços e produtos, incluindo:</p>
+            <ul class="paragrafo list-unstyled services-list">
+                <li><b>Produtos Nutricionais:</b> Suplementos e produtos alimentares que apoiam uma dieta equilibrada.</li>
+                <li><b>Exames Nutricionais:</b> Avaliação do estado nutricional para personalizar seu plano alimentar.</li>
+                <li><b>Receitas Personalizadas:</b> Receitas adaptadas aos seus gostos e necessidades.</li>
+                <li><b>Calculadora de IMC:</b> Ferramenta online para monitorar sua saúde.</li>
+                <li><b>Acompanhamento Contínuo:</b> Suporte regular para ajustar seu plano alimentar.</li>
+            </ul>
+            
+            <h2 class="titulo-introdução"><b>Participe!</b></h2>
+            <p class="paragrafo">
+                Convidamos você a agendar uma consulta e dar o primeiro passo em direção a uma vida mais saudável. Nossa equipe está pronta para acolhê-lo e ajudá-lo a alcançar seus objetivos!
+            </p>
+        </div>
+    </section>
+    
+    <!-- Seção Variedades -->
+    <section id="Colecao" class="text-center mb-4 fade-in">
+        <h2><b>Variedades</b></h2>
+        <br>
+        <div class="row justify-content-center">
+            <div class="container d-flex justify-content-around">
+                <!-- Seção Produtos -->
+                <div class="box fade-in banner-item">
+                    <a href="produtos.html">
+                        <div class="overlay"></div>
+                        <p class="meu-paragrafo">Produtos</p>
+                        <img src="https://i0.wp.com/naturvida.com.br/wp-content/uploads/2023/08/4.jpg?fit=1080%2C1080&ssl=1" alt="Produtos" class="banner-img">
+                    </a>     
+                </div>
+                
+                <!-- Seção Exames -->
+                <div class="box fade-in banner-item">
+                    <a href="exames.html">
+                        <div class="overlay"></div>
+                        <p class="meu-paragrafo">Exames</p>
+                        <img src="https://sanaresst.com.br/wp-content/uploads/2018/10/exame-medico-ocupacional-1046x697.jpg" alt="Exames" class="banner-img">
+                    </a>
+                </div>
+                
+                <!-- Seção Receitas -->
+                <div class="box fade-in banner-item">
+                    <a href="receitas.html">
+                        <div class="overlay"></div>
+                        <p class="meu-paragrafo">Receitas</p>
+                        <img src="https://media.gazetadopovo.com.br/2024/03/01184019/flay-leigos-de-nozes-e-legumes-960x540.jpg" alt="Receitas" class="banner-img">
+                    </a>
+                </div>
+                
+                <!-- Seção IMC -->
+                <div class="box fade-in banner-item">
+                    <a href="imc.html">
+                        <div class="overlay"></div>
+                        <p class="meu-paragrafo">Calculadora IMC</p>
+                        <img src="https://balancadigital.info/wp-content/uploads/2023/05/qual-a-balanca-mais-precisa-para-se-pesar.png" alt="IMC" class="banner-img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Form de Contato -->
+    <section id="Contato" class="mb-4 fade-in">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2><i class="fas fa-envelope"></i> <b>Contato</b></h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="contato-form">
+                            <div class="form-group">
+                                <label for="nome"><i class="fas fa-user"></i> <b>Nome:</b></label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> <b>E-mail:</b></label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem"><i class="fas fa-comment"></i> <b>Mensagem:</b></label>
+                                <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                        <div id="resultado-mensagem" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Localização -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2><span role="img" aria-label="Localização">📍</span> <b>Localização</b></h2>
+                    </div>
+                    <div class="card-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.6834917530537!2d-48.072287623065286!3d-15.820634523605642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3391b366fc47%3A0x88c16b784a3ad98f!2sSenai%20Taguatinga!5e0!3m2!1sen!2sbr!4v1729222919421!5m2!1sen!2sbr" width="1200" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção O que nossos clientes dizem -->
+    <section id="comentarios" class="container mt-5 fade-in">
+        <h2 class="text-center mb-4">O que nossos clientes dizem</h2>
+        
+        <!-- Primeiro comentário -->
+        <div class="media mb-4 comentario-item">
+            <img src="src/imagens/Laryssa Savior.png" class="mr-3 rounded-circle img-fluid cliente-img" alt="Cliente 1">
+            <div class="media-body">
+                <h5 class="mt-0 cliente-nome">Laryssa Savior</h5>
+                <p class="text-warning estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </p>
+                <p class="comentario-texto">
+                    "Fiquei impressionada com os resultados que alcancei após o acompanhamento nutricional! O plano alimentar foi completamente personalizado e consegui mudar meus hábitos de forma definitiva. Recomendo muito!"
+                </p>
+            </div>
+        </div>
+        
+        <!-- Segundo comentário -->
+        <div class="media mb-4 comentario-item">
+            <img src="src/imagens/luis.jpg" class="mr-3 rounded-circle img-fluid cliente-img" alt="Cliente 2">
+            <div class="media-body">
+                <h5 class="mt-0 cliente-nome">Luis Felipe</h5>
+                <p class="text-warning estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </p>
+                <p class="comentario-texto">
+                    "Excelente profissional! Além de um atendimento atencioso, o plano alimentar era muito bem balanceado e ajustado às minhas necessidades. Melhorei meu desempenho esportivo e minha saúde geral."
+                </p>
+            </div>
+        </div>
+        
+        <!-- Terceiro comentário -->
+        <div class="media mb-4 comentario-item">
+            <img src="src/imagens/cauo.jpg" class="mr-3 rounded-circle img-fluid cliente-img" alt="Cliente 3">
+            <div class="media-body">
+                <h5 class="mt-0 cliente-nome">Caio Barbosa</h5>
+                <p class="text-warning estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </p>
+                <p class="comentario-texto">
+                    "O acompanhamento nutricional foi essencial para alcançar meus objetivos de saúde e bem-estar. A dedicação e o conhecimento do nutricionista fizeram toda a diferença no meu progresso!"
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <br/><br/>
+    <h1>Perguntas Frequentes</h1>
+    
+    <div class="faq-container">
+        <div class="faq-item">
+            <h2>1. O que é uma dieta balanceada?</h2>
+            <p>Uma dieta balanceada é aquela que inclui uma variedade de alimentos em proporções adequadas para fornecer os nutrientes necessários ao corpo. Ela inclui proteínas, carboidratos, gorduras saudáveis, vitaminas e minerais.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>2. Qual a importância da hidratação para o corpo?</h2>
+            <p>A hidratação adequada é essencial para o funcionamento de todas as células e órgãos do corpo. Ela auxilia na regulação da temperatura corporal, transporte de nutrientes e remoção de resíduos.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>3. Comer carboidratos à noite engorda?</h2>
+            <p>Não é necessariamente o horário em que você consome carboidratos que leva ao ganho de peso, mas sim o excesso de calorias consumidas durante o dia. Carboidratos podem ser consumidos à noite com moderação.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>4. Como posso saber qual é a quantidade ideal de calorias que devo consumir por dia?</h2>
+            <p>A quantidade de calorias que você deve consumir depende de fatores como idade, sexo, peso, altura e nível de atividade física. Um nutricionista pode ajudar a calcular sua necessidade calórica diária.</p>
+        </div>
+        
+        <div class="faq-item">
+            <h2>5. Qual a diferença entre alimentos integrais e refinados?</h2>
+            <p>Alimentos integrais são aqueles que não passaram por processos de refinação e, portanto, preservam suas fibras e nutrientes. Já os alimentos refinados perdem parte das fibras e nutrientes no processo de industrialização.</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="row">
+                <!-- Seção Sobre Nós -->
+                <div class="col-md-4">
+                    <h5>Sobre Nós</h5>
+                    <p>Somos uma equipe dedicada à saúde e bem-estar, oferecendo serviços personalizados.</p>
+                    <p>Nossa missão é ajudar você a alcançar seus objetivos de forma saudável.</p>
+                </div>
+                <!-- Seção Serviços -->
+                <div class="col-md-4">
+                    <h5>Serviços</h5>
+                    <ul>
+                        <li>Avaliação Nutricional</li>
+                        <li>Planejamento de Dietas Personalizadas</li>
+                        <li>Consultas de Acompanhamento</li>
+                        <li>Orientação em Atividade Física</li>
+                    </ul>
+                </div>
+                <!-- Seção Contato -->
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p>Email: contato@nutricionista.com</p>
+                    <p>Telefone: (11) 98765-4321</p>
+                    <p>Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-x"></i></a> <!-- Ícone atualizado para o X -->
+                    </div>
+                </div>
+            </div>
+            
+            <p>&copy; 2024 <i>Centro Nutricional.</i> Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Importa o Script -->
+    <script src="src/scripts/Index.js"></script>
+</body>
 </html>

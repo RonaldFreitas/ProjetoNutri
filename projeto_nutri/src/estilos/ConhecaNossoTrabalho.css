@@ -1,0 +1,38 @@
+.highlight-background {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.titulo-introdução {
+    font-size: 2.8rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.titulo-introdução:hover {
+    color: #007bff;
+    text-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.paragrafo {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    font-family: 'Verdana', sans-serif;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    transition: color 0.3s ease;
+}
+
+.paragrafo:hover {
+    color: #007bff;
+}

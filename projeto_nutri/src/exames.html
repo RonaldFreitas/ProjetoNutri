@@ -4,107 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exames de Nutrição</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa; /* Fundo claro */
-            color: #343a40; /* Texto escuro */
-            padding: 20px;
-        }
+    <!-- Importa o Script do cabeçalho e do rodapé -->
+    <script src="scripts/CabecalhoRodape.js"></script>
+    <!-- Importa o CSS -->
+    <link rel="stylesheet" href="estilos/Exames.css">
+    <!-- Importa o Script -->
+    <script src="scripts/Exames.js"></script>
 
-        header {
-            background-color: #003366; /* Azul escuro */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 5px solid #E32636; /* Linha vermelha tipo SENAI */
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .exam {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: #e3f2fd; /* Azul suave */
-            border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            border-bottom: 5px solid #E32636; /* Linha vermelha tipo SENAI */
-        }
-
-        .exam h2 {
-            color: #005f8f; /* Azul intermediário */
-            font-size: 1.8rem;
-        }
-
-        .exam p {
-            font-size: 1rem;
-            color: #555;
-            
-        }
-
-        .btn-more {
-            background-color: #0096c7; /* Azul intermediário */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-more:hover {
-            background-color: #0077b6; /* Azul escuro ao passar o mouse */
-        }
-        .img-responsive {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .extra-content {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #777;
-        }
-    </style>
-
-    <script>
-        function toggleContent(id) {
-            var content = document.getElementById(id);
-            if (content.style.display === "none") {
-                content.style.display = "block";
-                content.style.opacity = 0;
-                var opacity = 0;
-                var intervalID = setInterval(function() {
-                    if (opacity >= 1) {
-                        clearInterval(intervalID);
-                    } else {
-                        opacity += 0.1;
-                        content.style.opacity = opacity;
-                    }
-                }, 50);
-            } else {
-                content.style.display = "none";
-            }
-        }
-    </script>
 </head>
 <body>
-
     <header>
-        <h1>Exames de Nutrição</h1>
+        <div class="container">
+            <h1>Exames de Nutrição</h1>
+            <div id="header-placeholder"></div>
+        </div>
     </header>
 
     <div class="container">
@@ -142,7 +56,7 @@
                     <b>Roupas Confortáveis:</b> Usar roupas que permitam o acesso fácil ao braço, onde a amostra de sangue será coletada, pode ajudar a tornar o processo mais confortável.
                     <br>
                     Evitar Estresse: Tentar relaxar antes do exame pode ajudar a evitar que a ansiedade altere a pressão arterial e a frequência cardíaca, proporcionando uma coleta de sangue mais tranquila.</p>
-                <img src="./img/sangue.jpg" alt="Exame de Sangue" class="img-responsive">
+                <img src="imagens/sangue.jpg" alt="Exame de Sangue" class="img-responsive">
             </div>
         </div>
 
@@ -178,7 +92,7 @@
                     <b>Pesagem Hidrostática:</b> Também conhecida como pesagem subaquática, mede a densidade corporal submersa para determinar a porcentagem de gordura. Embora seja um método preciso, pode ser difícil de realizar em ambientes clínicos.
                     <br>
                     <b>Tomografia Computadorizada (TC) e Ressonância Magnética (RM):</b> Esses métodos de imagem são extremamente precisos na avaliação da gordura corporal e são usados principalmente em pesquisa clínica devido ao seu custo elevado.</p>
-                <img src="./img/Composição-corporal-840x400.jpg" alt="Avaliação de Gordura Corporal" class="img-responsive">
+                <img src="imagens/Composição-corporal-840x400.jpg" alt="Avaliação de Gordura Corporal" class="img-responsive">
             </div>
         </div>
 
@@ -212,7 +126,7 @@
                     <b>Testes Genéticos:</b> Alguns exames genéticos podem identificar predisposições a certas intolerâncias, como a intolerância à lactose. Esses testes analisam variantes genéticas que afetam a digestão de determinados alimentos. <br>
                     
                     <b>Testes Imunológicos:</b> Existem exames de sangue que medem a resposta imunológica a certos alimentos, embora sua eficácia e precisão sejam debatidas. Eles são menos comuns e não são sempre recomendados.</p> <br>
-                <img src="./img/como-identificar-uma-alergia-alimentar-1591x895.jpeg" alt="Teste de Intolerância Alimentar" class="img-responsive">
+                <img src="imagens/como-identificar-uma-alergia-alimentar-1591x895.jpeg" alt="Teste de Intolerância Alimentar" class="img-responsive">
             </div>
         </div>
 
@@ -252,14 +166,11 @@
                     <b>Monitoramento da Saúde:</b> A análise regular da microbiota pode servir como um indicador da saúde geral, permitindo ajustes na dieta e no estilo de vida antes que problemas maiores se desenvolvam.<br>
                     
                     Prevenção de Doenças: Identificando desequilíbrios precocemente, é possível adotar intervenções que previnam doenças relacionadas à microbiota, como diabetes tipo 2 e doenças cardiovasculares.</p><br>
-                <img src="./img/Exame-de-Microbiota-Intestinal-Bio-Check-Up-.jpg" alt="Análise de Microbiota" class="img-responsive">
+                <img src="imagens/Exame-de-Microbiota-Intestinal-Bio-Check-Up-.jpg" alt="Análise de Microbiota" class="img-responsive">
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Consultoria Nutricional</p>
-    </footer>
-
+    <div id="footer-placeholder"></div>
 </body>
 </html>

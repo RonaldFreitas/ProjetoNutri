@@ -1,0 +1,81 @@
+/* Responsividade - Ajustes para telas menores */
+@media (max-width: 768px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    
+    .col-md-3 {
+        margin: 10px 0;
+    }
+
+    .carousel-item img {
+        height: auto;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .image-container img {
+        max-width: 100%; /* Ajusta a imagem para ocupar toda a largura em telas pequenas */
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    
+    .image-container img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+    }
+
+    .text-container,
+    .image-container {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .titulo-introdução {
+        font-size: 2rem;
+    }
+
+    .services-container {
+        padding: 40px 20px;
+    }
+
+    .services-section {
+        padding: 30px;
+        box-shadow: none;
+        border-radius: 10px;
+    }
+
+    .paragrafo {
+        font-size: 1rem;
+    }
+
+    .services-list li {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .banner-item {
+        width: 100%; /* Para dispositivos menores, ocupa 100% da largura */
+    }
+
+    .cliente-img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .cliente-nome {
+        font-size: 1em;
+    }
+    
+    .comentario-texto {
+        font-size: 0.9em;
+    }
+}

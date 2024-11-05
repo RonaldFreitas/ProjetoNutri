@@ -5,164 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora IMC</title>
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #calculo-imc {
-            max-width: 450px;
-            padding: 40px;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #ffffff, #e1f5fe);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        #calculo-imc:hover {
-            transform: translateY(-10px);
-        }
-
-        h2 {
-            text-align: center;
-            color: #00796b;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 2px solid #00796b;
-            border-radius: 8px;
-            font-size: 1.1em;
-            transition: border-color 0.3s ease;
-        }
-
-        input[type="number"]:focus {
-            border-color: #004d40;
-            outline: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            background-color: #00796b;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.3em;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #004d40;
-        }
-
-        #resultado-imc {
-            margin-top: 25px;
-            font-size: 1.6em;
-            text-align: center;
-            color: #00796b;
-            font-weight: bold;
-        }
-
-        .recomendacao {
-            font-size: 1.1em;
-            margin-top: 20px;
-            color: #004d40;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        .animacao-imc {
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <!-- Importa o Script do cabeçalho e do rodapé -->
+    <script src="scripts/CabecalhoRodape.js"></script>
+    <!-- Importa o CSS -->
+    <link rel="stylesheet" href="estilos/Imc.css">
+    <!-- Importa o Script -->
+    <script src="scripts/Imc.js"></script>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Calculadora de IMC</h1>
+            <div id="header-placeholder"></div>
+        </div>
+    </header>
+    <div class="centralizar">
+        <section id="calculo-imc">
+            <h2>Cálculo de IMC</h2>
+            <form id="imc-form" onsubmit="event.preventDefault(); calcularIMC();">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+                
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required min="0">
+                
+                <label for="altura">Altura (cm):</label>
+                <input type="number" id="altura" name="altura" required min="0">
+                
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" required min="0" step="0.1">
 
-    <section id="calculo-imc">
-        <h2>Cálculo de IMC</h2>
-        <form id="imc-form" onsubmit="event.preventDefault(); calcularIMC();">
-            <label for="peso">Peso (kg):</label>
-            <input type="number" id="peso" name="peso" required min="0" step="0.1">
+                <button type="submit">Calcular IMC</button>
+            </form>
 
-            <label for="altura">Altura (m):</label>
-            <input type="number" id="altura" name="altura" required min="0" step="0.01">
+            <div id="resultado-imc" class="animacao-imc"></div>
+            <div id="recomendacao" class="recomendacao"></div>
+        </section>
+    </div>
 
-            <button type="submit">Calcular IMC</button>
-        </form>
-
-        <div id="resultado-imc" class="animacao-imc"></div>
-        <div id="recomendacao" class="recomendacao"></div>
-    </section>
-
-    <script>
-        function calcularIMC() {
-            const peso = parseFloat(document.getElementById("peso").value);
-            const altura = parseFloat(document.getElementById("altura").value);
-
-            if (!isNaN(peso) && !isNaN(altura) && peso > 0 && altura > 0) {
-                const imc = peso / (altura * altura);
-                let classificacao = '';
-                let recomendacao = '';
-
-                if (imc < 18.5) {
-                    classificacao = 'Abaixo do peso';
-                    recomendacao = 'Recomenda-se uma alimentação balanceada e o acompanhamento de um nutricionista.';
-                } else if (imc >= 18.5 && imc < 24.9) {
-                    classificacao = 'Peso normal';
-                    recomendacao = 'Parabéns! Mantenha uma alimentação saudável e pratique atividades físicas regularmente.';
-                } else if (imc >= 25 && imc < 29.9) {
-                    classificacao = 'Sobrepeso';
-                    recomendacao = 'É recomendada a prática de exercícios físicos e controle alimentar para evitar complicações à saúde.';
-                } else if (imc >= 30 && imc < 34.9) {
-                    classificacao = 'Obesidade grau I';
-                    recomendacao = 'Recomenda-se acompanhamento médico e nutricional para controle do peso.';
-                } else if (imc >= 35 && imc < 39.9) {
-                    classificacao = 'Obesidade grau II';
-                    recomendacao = 'É essencial procurar orientação médica e adotar um plano de reeducação alimentar e exercício físico.';
-                } else {
-                    classificacao = 'Obesidade grau III';
-                    recomendacao = 'A obesidade grau III é considerada grave. É necessário o acompanhamento médico urgente para tratamento adequado.';
-                }
-
-                document.getElementById("resultado-imc").innerText = `Seu IMC é ${imc.toFixed(2)} (${classificacao})`;
-                document.getElementById("recomendacao").innerText = recomendacao;
-
-            } else {
-                document.getElementById("resultado-imc").innerText = "Por favor, insira valores válidos.";
-                document.getElementById("recomendacao").innerText = '';
-            }
-        }
-    </script>
-
+    <div id="footer-placeholder"></div>
 </body>
 </html>

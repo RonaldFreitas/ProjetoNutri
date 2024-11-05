@@ -4,127 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receitas Saudáveis</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0faff; /* Fundo azul bem claro */
-            padding: 20px;
-        }
+    <!-- Importa o Script do cabeçalho e do rodapé -->
+    <script src="scripts/CabecalhoRodape.js"></script>
+    <!-- Importa o CSS -->
+    <link rel="stylesheet" href="estilos/Receitas.css">
 
-        header {
-            background-color: #003366; /* Azul escuro */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 5px solid #E32636; /* Linha vermelha tipo SENAI */
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-
-        .recipe {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: #e3f2fd; /* Azul suave para fundo de receita */
-            border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 5px solid #E32636; /* Linha vermelha tipo SENAI */
-        }
-
-        .recipe img {
-            width: 150px;
-            border-radius: 10px;
-        }
-
-        .recipe-content {
-            flex: 1;
-            margin-left: 20px;
-        }
-
-        .recipe-content h3 {
-            margin-top: 0;
-            color: #0096c7; /* Azul intermediário */
-            font-size: 1.8rem;
-        }
-
-        .recipe-content p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .btn-detalhes {
-            background-color: #0096c7; /* Azul intermediário */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-detalhes:hover {
-            background-color: #0077b6; /* Azul escuro ao passar o mouse */
-        }
-
-        /* Tornando o layout responsivo */
-        @media (max-width: 768px) {
-            .recipe {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .recipe img {
-                margin-bottom: 20px;
-            }
-
-            .recipe-content {
-                margin-left: 0;
-            }
-        }
-    </style>
 </head>
 <body>
-
     <header>
         <h1>Receitas Saudáveis</h1>
+        <div id="header-placeholder"></div>
     </header>
 
     <!-- Receita 1: Salada de Quinoa -->
     <div class="recipe">
-        <img src="./img/salade.png" alt="Salada de Quinoa">
+        <img src="imagens/salade.png" alt="Salada de Quinoa">
         <div class="recipe-content">
             <h3>Salada de Quinoa</h3>
             <p>Uma deliciosa e nutritiva salada de quinoa com vegetais frescos e temperos.</p>
-            <a href="receita1.html" class="btn-detalhes">Ver Receita</a>
+            <a href="receitas/receita1.html" class="btn-detalhes">Ver Receita</a>
         </div>
     </div>
 
     <!-- Receita 2: Smoothie Verde -->
     <div class="recipe">
-        <img src="./img/suce.jpeg" alt="Smoothie Verde">
+        <img src="imagens/suce.jpeg" alt="Smoothie Verde">
         <div class="recipe-content">
             <h3>Smoothie Verde</h3>
             <p>Um smoothie refrescante e cheio de nutrientes, perfeito para começar o dia.</p>
-            <a href="receita2.html" class="btn-detalhes">Ver Receita</a>
+            <a href="receitas/receita2.html" class="btn-detalhes">Ver Receita</a>
         </div>
     </div>
 
     <!-- Receita 3: Bolo de Banana Integral -->
     <div class="recipe">
-        <img src="./img/bolo-de-banana.jpg" alt="Bolo de Banana Integral">
+        <img src="imagens/bolo-de-banana.jpg" alt="Bolo de Banana Integral">
         <div class="recipe-content">
             <h3>Bolo de Banana Integral</h3>
             <p>Um bolo saudável e delicioso, feito com bananas maduras e farinha integral.</p>
-            <a href="receita3.html" class="btn-detalhes">Ver Receita</a>
+            <a href="receitas/receita3.html" class="btn-detalhes">Ver Receita</a>
         </div>
     </div>
 
+    <div id="footer-placeholder"></div>
 </body>
 </html>
