@@ -94,7 +94,7 @@ function classificarIMCMasculino(imc, idade) {
             recomendacao = 'A obesidade grau III é considerada grave. É necessário o acompanhamento médico urgente para tratamento adequado.';
         }
     } else {
-        // Adultos (acima de 18)
+        // Acima de 17
         if (imc < 18.5) {
             recomendacao = 'Recomenda-se uma alimentação balanceada e o acompanhamento de um nutricionista.';
             classificacao = 'Abaixo do peso';
