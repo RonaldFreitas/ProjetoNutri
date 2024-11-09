@@ -405,3 +405,6 @@ section {
 .faq-item h2.active:after {
     transform: rotate(180deg); /* Inverte a seta quando o item está ativo */
 }
+
+
+
