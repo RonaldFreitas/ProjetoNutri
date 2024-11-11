@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import '../styles/IMCCalculator.css';
 
+
 const IMCCalculator = () => {
   const [formData, setFormData] = useState({
     sexo: 'masculino',

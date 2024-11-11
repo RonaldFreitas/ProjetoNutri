@@ -1,12 +1,10 @@
 //O ARQUIVO PRECISA ESTAR NO SRC PARA QUE O CABEÇALHO FUNCIONE
 
 //Importa o CSS do Bootstrap para estilização
-<link rel="stylesheet" href="estilos/EstilosGerais.css">
 
+import '../styles./EstilosGerais.css';
 
-//Importa o CSS do Bootstrap para estilização
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+//<link rel="stylesheet" href="estilos/EstilosGerais.css">
 
 <nav class="d-flex justify-content-center align-items-center">
     //Atualização dos links
@@ -16,4 +14,4 @@
     <a href="imc.html">IMC</a>
     <a href="produtos.html">Produtos</a>
     <a href="login.html" class="btn btn-outline-light ml-3">Login e Cadastro</a>
-</nav>;
+</nav>

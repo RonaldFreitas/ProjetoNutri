@@ -1,8 +1,11 @@
-# React + Vite
+# Erros a serem corrigidos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Camadas "duplicadas"
+Alguns .html contém "style" e "script" e ao mesmo tempo, possuem arquivos .css e .js relacionados a eles, tornando redundante ou criandoa arquivos inutilizados.
+São eles "carrinho.html", "login.html"...
+"cabecalho.html" importa um .css inexistente "EstilosGerais.css".
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Minha parte
+O projeto está funcionando com base no index.html, não via App.jsx.
+Alguns .html apesar de importarem corretamente o .css, não estão funcionando corretamente devido a sintaxe.
+Os components ainda não foram devidamente criados.
