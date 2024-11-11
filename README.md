@@ -1,7 +1,7 @@
-<h1> Erros a serem corrigidos</h1>
+# Erros a serem corrigidos
 
 ## Camadas "duplicadas"
-- Alguns .html contém "style" e "script" e ao mesmo tempo, possuem arquivos .css e .js relacionados a eles, tornando redundante ou criando arquivos inutilizados.
+- Alguns .html contém "style" e "script" e ao mesmo tempo, possuem arquivos .css e .js relacionados a eles, tornando redundante ou criandoa arquivos inutilizados.
 - São eles "carrinho.html", "login.html"...
 - "cabecalho.html" importa um .css inexistente "EstilosGerais.css".
 
