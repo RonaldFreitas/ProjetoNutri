@@ -14,7 +14,7 @@ import Footer from "../components/otherComponents/Footer.jsx"
 function Home(){
     return(
         <>
-        <Cabecalho/>
+        {/*<Cabecalho/>*/}
         <Carousel/>
         <Quadradinhos/>
         <Conheca/>
@@ -30,15 +30,3 @@ function Home(){
 };
 
 export default Home;
-{/*
-                Cabeçalho
-                Carousel
-                Quadradinhos
-                Conheca
-                Servicos
-                Variedades
-                Contato
-                Feedback
-                PerguntasFrequentes
-                Footer
-            */}

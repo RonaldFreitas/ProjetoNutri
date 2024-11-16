@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/EstilosGerais.css';
+import "../../styles/EstilosGerais.css";
 
 {/*
     Procurar css correspondentes faltantes
