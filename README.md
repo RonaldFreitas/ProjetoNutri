@@ -36,6 +36,8 @@ npm install bootstrap @popperjs/core
 npm install @fortawesome/fontawesome-free
 npm run dev
 
+```
+
 ## Em caso de json não estar configurado tente rodar:
 
 ```bash
