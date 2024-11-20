@@ -30,12 +30,13 @@ Siga os passos abaixo para instalar as dependências do projeto:
 ```bash
 cd projeto_nutri
 npm install
+npm install express
 npm install react-router-dom
 npm install bootstrap @popperjs/core
 npm install @fortawesome/fontawesome-free
 npm run dev
 
-### Em caso de json não estar configurado tente rodar:
+## Em caso de json não estar configurado tente rodar:
 
 ```bash
 npm audit fix
