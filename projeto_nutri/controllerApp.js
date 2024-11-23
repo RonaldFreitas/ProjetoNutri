@@ -1,5 +1,5 @@
 const express = require('express');
-const { inserirUsuario } = require('./dbuserController');
+const { inserirUsuario } = require('./userController');
 const { inserirProduto } = require('./dbprodutoController');
 const { inserirPedido } = require('./dbpedidoController');
 
@@ -11,11 +11,17 @@ app.get('/', (req, res) => {
 });
 
 // Exemplo de uso das funções
-inserirUsuario('05102205567', 'Ronald anão pistolinha', 'ronaldbotas@gmail.com', 'pistolinha123');
-inserirProduto('P003', 'Semente de Chia', '1', 20.00, 10);
-inserirPedido(1, 'P001', '12345678901', new Date());
-
+(async () => {
+  try {
+    await inserirUsuario('06602200144', 'Luis preso', 'cadeafisicaequimica@gmail.com', 'vampirodanet');
+    await inserirProduto('P004', 'Pas de Amendoin Integral', '1', 28.00, 5);
+    await inserirPedido('P001', '12345678901', new Date());
+  } catch (error) {
+    console.error('Erro durante a execução de exemplos:', error.message);
+  }
+})();
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${1433}`);
 });
+
