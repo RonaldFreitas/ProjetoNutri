@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from '../App';
-//import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'; // Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Font Awesome CSS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Inclui Popper.js automaticamente
 import './styles/EstilosGerais.css';
