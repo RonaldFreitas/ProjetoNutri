@@ -5,6 +5,7 @@ const config = {
   password: 'v1t0rp4tr1ck',
   server: 'DESKTOP-1P4OOMP', 
   database: 'CLIENTES',
+  driver: "msnodesqlv8",
   options: {
     encrypt: false, 
     trustServerCertificate: true, 

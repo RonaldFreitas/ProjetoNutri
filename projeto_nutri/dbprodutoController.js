@@ -1,7 +1,7 @@
 const connectToDatabase = require('./dbConfig');
 const sql = require('mssql');
 
-async function inserirPedido(codigoProduto, nomeProduto, quantidade, preco, estoque) {
+async function inserirProduto(codigoProduto, nomeProduto, quantidade, preco, estoque) {
   const pool = await connectToDatabase();
   try {
     await pool.request()
@@ -10,11 +10,12 @@ async function inserirPedido(codigoProduto, nomeProduto, quantidade, preco, esto
       .input('QUANTIDADE', sql.VarChar(50), quantidade)
       .input('PRECO', sql.SmallMoney, preco)
       .input('ESTOQUE', sql.Int, estoque)
-      .query('INSERT INTO PEDIDOS (CODIGO_PRODUTO, NOME_PRODUTO, QUANTIDADE, PRECO, ESTOQUE) VALUES (@CODIGO_PRODUTO, @NOME_PRODUTO, @QUANTIDADE, @PRECO, @ESTOQUE)');
-    console.log('Pedido inserido com sucesso!');
+      .query('INSERT INTO TABELA_PRODUTOS (CODIGO_PRODUTO, NOME_PRODUTO, QUANTIDADE, PRECO, ESTOQUE) VALUES (@CODIGO_PRODUTO, @NOME_PRODUTO, @QUANTIDADE, @PRECO, @ESTOQUE)');
+    console.log('Produto inserido com sucesso!');
   } catch (error) {
-    console.error('Erro ao inserir pedido:', error);
+    console.error('Erro ao inserir produto:', error);
   }
 }
 
-module.exports = { inserirPedido };
+module.exports = { inserirProduto };
+
