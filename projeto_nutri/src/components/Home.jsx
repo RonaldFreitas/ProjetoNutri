@@ -11,21 +11,21 @@ import PerguntasFrequentes from "../components/homeComponents/PerguntasFrequente
 import Footer from "../components/otherComponents/Footer.jsx"
 
 
-function Home(){
-    return(
+function Home() {
+    return (
         <>
-        {/*<Cabecalho/>*/}
-        <Carousel/>
-        <Quadradinhos/>
-        <Conheca/>
-        <Servicos/>
-        <Variedades/>
-        <Contato/>
-        <PerguntasFrequentes/>
-        <Footer/>
+            <Cabecalho />
+            <Carousel />
+            <Quadradinhos />
+            <Conheca />
+            <Servicos />
+            <Variedades />
+            <Contato />
+            <PerguntasFrequentes />
+            <Footer />
         </>
-            
-        
+
+
     )
 };
 
