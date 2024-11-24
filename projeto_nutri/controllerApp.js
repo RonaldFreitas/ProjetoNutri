@@ -4,7 +4,7 @@ const { inserirProduto } = require('./dbprodutoController');
 const { inserirPedido } = require('./dbpedidoController');
 
 const app = express();
-const port = 1433;
+const port = 3000;
 
 app.get('/', (req, res) => {
   res.send('Bem-vindo ao ProjetoNutri!');
@@ -22,6 +22,6 @@ app.get('/', (req, res) => {
 })();
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${1433}`);
+  console.log(`Servidor rodando em http://localhost:${3000}`);
 });
 
