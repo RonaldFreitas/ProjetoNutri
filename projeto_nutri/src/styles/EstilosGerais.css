@@ -110,15 +110,6 @@ section {
 }
 
 
-/* Carrossel de Imagens */
-.carousel-item img {
-    width: 100%;
-    max-height: 800px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-
 /* Caixa com Efeitos */
 .box {
     position: relative;
@@ -407,4 +398,22 @@ section {
 }
 
 
+.carousel {
+    width: 98%; /* Ajusta a largura para 80% da tela */
+    margin: 0 auto; /* Centraliza o carousel */
+}
 
+.carousel-item img {
+    width: 100%; /* Faz a imagem se ajustar à largura do carousel */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Se quiser ajustar a altura */
+.carousel-inner {
+    height: 300px; /* Defina a altura que preferir */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Faz a imagem cobrir a área do carousel sem distorcer */
+    height: 100%; /* Ajusta a altura da imagem para 100% */
+}

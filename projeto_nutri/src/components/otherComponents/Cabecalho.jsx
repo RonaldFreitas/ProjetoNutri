@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 function Cabecalho() {
   return (
     <header>
+      <h1>GO NUTRI</h1><br/>
       <nav className="d-flex justify-content-center align-items-center">
         <ul><Link to="/">Início</Link></ul>
         <ul><Link to="/receitas">Receitas</Link></ul>

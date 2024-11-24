@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/EstilosGerais.css";
-import Carousel from "../homeComponents/Carousel.jsx"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carrosel from "../homeComponents/Carrossel.jsx"
 import Quadradinhos from "../homeComponents/Quadradinhos.jsx"
 import Conheca from "../homeComponents/Conheca.jsx"
 import Servicos from "../homeComponents/Servicos.jsx"
@@ -12,15 +13,7 @@ import Footer from "../otherComponents/Footer.jsx"
 function Home() {
     return (
         <>
-        <h1 className="text-4x1 font-bold text-center mb-2">Produtos de Nutricionismo</h1>
-        <p className="text-center mb-6">Descubra nossos produtos para uma alimentação saudável</p>
-           
-            {/* Classe acima para exemplificar o "CSS dinamico",
-            o mesmo codigo na pagina produtos, carrega um azul diferente,
-            ja na pagina home
-            */}
-
-            <Carousel />
+            <Carrosel />
             <Quadradinhos />
             <Conheca />
             <Servicos />
@@ -28,8 +21,6 @@ function Home() {
             <Contato />
             <PerguntasFrequentes />
         </>
-
-
     )
 };
 
