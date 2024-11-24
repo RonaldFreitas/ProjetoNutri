@@ -20,6 +20,15 @@
 - Rotas ainda nao implementadas.
 - Todas as alterações necessarias estão dentro dos componentes relacionados a Home, não houve interação com o restante. 
 
+## Atualizações dia 23/11
+- Rotas inicialmente funcionando
+- Arrumar o CSS da pagina Home.jsx
+- Aplicar o CSS de Produtos.jsx
+- Arrumar o Saiba Mais de Exames.jsx
+- Algumas "sub" rotas a serem definidas (receitas 1 2 e 3)
+- Fazer o login funcionar (Re-importar icones depreciados)
+- Entender como esta funcionando alguns headers (CSS "dinamico"?)
+
 # Como Instalar as Dependências
 
 Siga os passos abaixo para instalar as dependências do projeto:
@@ -36,6 +45,7 @@ npm install msnodesqlv8
 npm install react-router-dom
 npm install bootstrap @popperjs/core
 npm install @fortawesome/fontawesome-free
+npm install lucide-react
 npm run dev
 
 ```

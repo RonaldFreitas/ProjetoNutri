@@ -118,14 +118,14 @@ const ProductPage = () => {
         <div className="container mx-auto">
           <h1 className="text-4xl font-bold text-center mb-2">Produtos de Nutricionismo</h1>
           <p className="text-center mb-6">Descubra nossos produtos para uma alimentação saudável</p>
-          
+
           <nav className="flex justify-center items-center space-x-6">
-            <a href="#" className="hover:text-blue-200 transition-colors">Inicio</a>
+            {/*<a href="#" className="hover:text-blue-200 transition-colors">Inicio</a>
             <a href="#" className="hover:text-blue-200 transition-colors">Receitas</a>
             <a href="#" className="hover:text-blue-200 transition-colors">Exames</a>
             <a href="#" className="hover:text-blue-200 transition-colors">IMC</a>
-            <a href="#" className="hover:text-blue-200 transition-colors">Produtos</a>
-            <button 
+            <a href="#" className="hover:text-blue-200 transition-colors">Produtos</a>*/}
+            <button
               onClick={() => setIsCartVisible(!isCartVisible)}
               className="hover:text-blue-200 transition-colors flex items-center"
             >
@@ -147,8 +147,8 @@ const ProductPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <img 
-                src={product.image} 
+              <img
+                src={product.image}
                 alt={product.name}
                 className="w-full h-48 object-cover"
               />

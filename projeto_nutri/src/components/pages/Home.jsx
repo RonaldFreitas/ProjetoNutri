@@ -12,9 +12,14 @@ import Footer from "../otherComponents/Footer.jsx"
 function Home() {
     return (
         <>
-        {/*<h1 className="text-4x1 font-bold text-center mb-2">Produtos de Nutricionismo</h1>
+        <h1 className="text-4x1 font-bold text-center mb-2">Produtos de Nutricionismo</h1>
         <p className="text-center mb-6">Descubra nossos produtos para uma alimentação saudável</p>
            
+            {/* Classe acima para exemplificar o "CSS dinamico",
+            o mesmo codigo na pagina produtos, carrega um azul diferente,
+            ja na pagina home
+            */}
+
             <Carousel />
             <Quadradinhos />
             <Conheca />
@@ -22,7 +27,6 @@ function Home() {
             <Variedades />
             <Contato />
             <PerguntasFrequentes />
-            <Footer />*/} 
         </>
 
 

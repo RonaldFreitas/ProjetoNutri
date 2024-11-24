@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import '../../styles/Recipes.css';
 import salada from '../../assets/salade.png'
 import suco from '../../assets/suce.jpeg'
-import bolo from '../../assets/salade.png'
+import bolo from '../../assets/bolo-de-banana.jpg'
+
+{/* Fazer os componentes dos "links" e importar acima e levar para a const*/}
 
 const recipesData = [
   {
@@ -55,9 +57,7 @@ function Recipes() {
         ))}
       </main>
 
-      <footer className="recipes-footer">
-        {/* Adicione o conteúdo do footer aqui */}
-      </footer>
+    
     </div>
   );
 }

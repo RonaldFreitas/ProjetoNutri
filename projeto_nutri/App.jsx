@@ -24,26 +24,16 @@ function App() {
   return (
     <>
       <Cabecalho />
-
-      
-
-
-      <Carousel />
-      <Quadradinhos />
-      <Conheca />
-      <Servicos />
-      <Variedades />
-      <Contato />
-      <PerguntasFrequentes />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/receitas" element={<Recipes />} />
+        <Route path="/exames" element={<ExamCard />} />
+        <Route path="/imc" element={<IMCCalculator />} />
+        <Route path="/produtos" element={<ProductPage />} />
+        {/*<Route path="/login" element={<LoginPage/>} />
+        <Route path="/carrinho" element={<ShoppingCart />} />*/}
+      </Routes>
       <Footer />
-
-      <ExamCard />
-      <IMCCalculator />
-      {/*<LoginPage/> nao ta funcionando */}
-      <ProductPage />
-      <Recipes />
-      <ShoppingCart />
-
     </>
   );
 }
