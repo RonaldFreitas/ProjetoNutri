@@ -39,10 +39,12 @@ Siga os passos abaixo para instalar as dependências do projeto:
 ```bash
 cd projeto_nutri
 npm install
+npm install bootstrap
 npm install express
 npm install mssql
 npm install msnodesqlv8
 npm install react-router-dom
+npm install react-bootstrap bootstrap
 npm install bootstrap @popperjs/core
 npm install @fortawesome/fontawesome-free
 npm install lucide-react
