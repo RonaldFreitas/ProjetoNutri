@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
 import { ShoppingCart, LogIn } from 'lucide-react';
+import '../../styles/ProductPage.css'
+import farinhaAmendoas from "../../assets/amendoas.webp"
+import oleoDeCoco from "../../assets/coco.webp"
+import proteinaVegetal from "../../assets/proteina.jpeg"
+import chia from "../../assets/chia.webp"
+import beteraba from "../../assets/beteraba.webp"
+import pastaDeAmendoim from "../../assets/amendoim.webp"
+import creatina from "../../assets/creatina.webp"
+import wheyProtein from "../../assets/whey.webp"
+import cacau from "../../assets/cacau.jpg"
+import mixCastanha from "../../assets/mix-de-castanha-tiny.jpg"
 
 const ProductPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -11,70 +22,70 @@ const ProductPage = () => {
       name: "Farinha de Amêndoas",
       description: "Fonte rica de fibras e proteínas, ideal para receitas sem glúten e low-carb.",
       price: 25.00,
-      image: "/api/placeholder/300/200"
+      image: farinhaAmendoas
     },
     {
       id: 2,
       name: "Óleo de Coco Extra Virgem",
       description: "Óleo natural, perfeito para cozinhar e para uso cosmético.",
       price: 30.00,
-      image: "/api/placeholder/300/200"
+      image: oleoDeCoco
     },
     {
       id: 3,
       name: "Proteína Vegetal em Pó",
       description: "Suplemento ideal para dietas vegetarianas e veganas.",
       price: 45.00,
-      image: "/api/placeholder/300/200"
+      image: proteinaVegetal
     },
     {
       id: 4,
       name: "Semente de Chia",
       description: "Fonte de ômega-3, antioxidantes e fibras para uma vida saudável.",
       price: 20.00,
-      image: "/api/placeholder/300/200"
+      image: chia
     },
     {
       id: 5,
       name: "Suco de Beterraba",
       description: "Rico em antioxidantes e excelente para melhorar a circulação sanguínea.",
       price: 15.00,
-      image: "/api/placeholder/300/200"
+      image: beteraba
     },
     {
       id: 6,
       name: "Pasta de Amendoim Integral",
       description: "100% natural, sem açúcar ou conservantes, rica em proteínas.",
       price: 28.00,
-      image: "/api/placeholder/300/200"
+      image: pastaDeAmendoim
     },
     {
       id: 7,
       name: "Creatina",
       description: "Suplemento para aumento de força e desempenho em atividades físicas.",
       price: 90.00,
-      image: "/api/placeholder/300/200"
+      image: creatina
     },
     {
       id: 8,
       name: "Whey Protein",
       description: "Proteína de rápida absorção, ideal para ganho de massa muscular.",
       price: 120.00,
-      image: "/api/placeholder/300/200"
+      image: wheyProtein
     },
     {
       id: 9,
       name: "Cacau em Pó Orgânico",
       description: "Fonte de antioxidantes, ótimo para receitas doces e saudáveis.",
       price: 15.00,
-      image: "/api/placeholder/300/200"
+      image: cacau
     },
     {
       id: 10,
       name: "Mix de Castanhas",
       description: "Combinação de castanhas-do-pará, nozes, amêndoas e avelãs.",
       price: 35.00,
-      image: "/api/placeholder/300/200"
+      image: mixCastanha
     }
   ];
 

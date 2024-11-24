@@ -1,6 +1,6 @@
 // src/components/IMCCalculator.jsx
 import { useState } from 'react';
-import '../styles/IMCCalculator.css';
+import '../../styles/IMCCalculator.css';
 
 
 const IMCCalculator = () => {

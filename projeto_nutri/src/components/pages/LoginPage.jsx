@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import '../styles/LoginPage.css';
+import '../../styles/LoginPage.css';
 import { 
-  GooglePlusG, 
-  Facebook, 
-  Github, 
-  Linkedin 
+  Linkedin,
 } from 'lucide-react';
+
+{/* Os imports dos ícones foram depreciados*/}
 
 const LoginPage = () => {
   const [isActive, setIsActive] = useState(false);
@@ -31,7 +30,7 @@ const LoginPage = () => {
             <h1 className="text-2xl font-bold mb-4">Crie sua conta</h1>
             <div className="flex gap-3 my-5">
               <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <GooglePlusG className="w-5 h-5" />
+                <Google className="w-5 h-5" />
               </a>
               <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
                 <Facebook className="w-5 h-5" />

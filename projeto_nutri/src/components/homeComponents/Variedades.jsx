@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/EstilosGerais.css";
+import Cabecalho from "../otherComponents/Cabecalho";
 
 
 {/* 
@@ -10,6 +11,8 @@ import "../../styles/EstilosGerais.css";
 
 function Variedades(){
     return(
+        <>
+
         <section id="Colecao" className="text-center mb-4 fade-in">
 
         <h2><b>Variedades</b></h2>
@@ -55,7 +58,7 @@ function Variedades(){
             </div>
         </div>
 
-    </section>
+    </section></>
     );
 }
 

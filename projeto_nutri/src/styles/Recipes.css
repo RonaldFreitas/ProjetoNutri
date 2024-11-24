@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
+    color: aqua;
   }
   
   .recipes-header {
@@ -10,7 +11,7 @@
     padding: 20px 0;
     margin-bottom: 30px;
   }
-  
+
   .recipes-header h1 {
     color: #333;
     font-size: 2.5rem;
@@ -58,6 +59,8 @@
     line-height: 1.5;
     margin: 0 0 15px 0;
   }
+  
+
   
   .recipe-button {
     display: inline-block;

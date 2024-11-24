@@ -1,27 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Recipes.css';
+import '../../styles/Recipes.css';
+import salada from '../../assets/salade.png'
+import suco from '../../assets/suce.jpeg'
+import bolo from '../../assets/salade.png'
 
 const recipesData = [
   {
     id: 1,
     title: 'Salada de Quinoa',
     description: 'Uma deliciosa e nutritiva salada de quinoa com vegetais frescos e temperos.',
-    image: '/imagens/salade.png',
+    image: salada,
     link: '/receitas/receita1'
   },
   {
     id: 2,
     title: 'Smoothie Verde',
     description: 'Um smoothie refrescante e cheio de nutrientes, perfeito para começar o dia.',
-    image: '/imagens/suce.jpeg',
+    image: suco,
     link: '/receitas/receita2'
   },
   {
     id: 3,
     title: 'Bolo de Banana Integral',
     description: 'Um bolo saudável e delicioso, feito com bananas maduras e farinha integral.',
-    image: '/imagens/bolo-de-banana.jpg',
+    image: bolo,
     link: '/receitas/receita3'
   }
 ];
