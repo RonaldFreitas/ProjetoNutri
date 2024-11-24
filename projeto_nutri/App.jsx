@@ -23,8 +23,8 @@ function App() {
         <Route path="/exames" element={<ExamCard />} />
         <Route path="/imc" element={<IMCCalculator />} />
         <Route path="/produtos" element={<ProductPage />} />
-        {/*<Route path="/login" element={<LoginPage/>} />
-        <Route path="/carrinho" element={<ShoppingCart />} />*/}
+        <Route path="/login" element={<LoginPage/>} />
+        {/*<Route path="/carrinho" element={<ShoppingCart />} />*/}
       </Routes>
       <Footer />
     </>

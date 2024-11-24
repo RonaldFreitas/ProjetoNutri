@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/LoginPage.css';
-import { 
-  Linkedin,
-} from 'lucide-react';
+
 
 {/* Os imports dos ícones foram depreciados*/}
 
@@ -27,21 +25,9 @@ const LoginPage = () => {
         {/* Sign Up Form */}
         <div className="absolute top-0 h-full transition-all duration-600 ease-in-out left-0 w-1/2 opacity-0 z-1 sign-up">
           <form className="bg-white flex items-center justify-center flex-col px-10 h-full">
+
             <h1 className="text-2xl font-bold mb-4">Crie sua conta</h1>
-            <div className="flex gap-3 my-5">
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <Google className="w-5 h-5" />
-              </a>
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
+            
             <span className="text-lg">Use seu email para se cadastrar</span>
             <input
               type="text"
@@ -67,21 +53,7 @@ const LoginPage = () => {
         {/* Sign In Form */}
         <div className="absolute top-0 h-full transition-all duration-600 ease-in-out left-0 w-1/2 z-2 sign-in">
           <form className="bg-white flex items-center justify-center flex-col px-10 h-full">
-            <h1 className="text-2xl font-bold mb-4">Entrar</h1>
-            <div className="flex gap-3 my-5">
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <GooglePlusG className="w-5 h-5" />
-              </a>
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <Github className="w-5 h-5" />
-              </a>
-              <a href="#" className="border border-[#ccc] rounded-[20%] flex justify-center items-center w-10 h-10">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
+           
             <span className="text-lg">Digite seu e-mail e sua senha</span>
             <input
               type="email"
