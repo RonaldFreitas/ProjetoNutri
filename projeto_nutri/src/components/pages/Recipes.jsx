@@ -34,9 +34,6 @@ const recipesData = [
 function Recipes() {
   return (
     <div className="recipes-page">
-      <header className="recipes-header">
-        <h1>Receitas Saudáveis</h1>
-      </header>
 
       <main className="recipes-container">
         {recipesData.map(recipe => (
