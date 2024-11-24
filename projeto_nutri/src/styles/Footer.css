@@ -48,6 +48,7 @@ footer ul li a:hover {
 footer .container {
     max-width: 1200px; /* Largura máxima */
     margin: auto; /* Centraliza o container */
+    color: rgb(255, 255, 255);
 }
 
 /* Estilo das linhas no rodapé */

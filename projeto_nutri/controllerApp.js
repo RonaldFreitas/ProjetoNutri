@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 // Exemplo de uso das funções
 (async () => {
   try {
-    await inserirUsuario('06602200144', 'Luis preso', 'cadeafisicaequimica@gmail.com', 'vampirodanet');
-    await inserirProduto('P004', 'Pas de Amendoin Integral', '1', 28.00, 5);
+    await inserirUsuario('40028922000', 'Babidi do java', 'olhaondeagarenabotafisica@gmail.com', 'vampirodanet');
+    await inserirProduto('P005', 'Minduim torrado', '1', 38.00, 5);
     await inserirPedido('P001', '12345678901', new Date());
   } catch (error) {
     console.error('Erro durante a execução de exemplos:', error.message);

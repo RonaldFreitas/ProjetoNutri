@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/LoginPage.css';
 
-
 {/* Os imports dos ícones foram depreciados*/}
 
 const LoginPage = () => {
