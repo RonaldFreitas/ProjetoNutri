@@ -10,8 +10,6 @@ instalar extensão SQLite Viewer
 ```bash
 cd projeto_nutri
 npm install
-npm install bootstrap express sqlite3 cors styled-components react-router-dom react-bootstrap bootstrap bootstrap @popperjs/core @fortawesome/fontawesome-free lucide-react
-- caso não funcione:
 npm install bootstrap
 npm install express
 npm install sqlite3
