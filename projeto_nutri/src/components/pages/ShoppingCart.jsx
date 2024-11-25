@@ -1,31 +1,68 @@
-import React from 'react';
+import React from "react";
+import { useCart } from "../contexts/CartContext";
 
-const ShoppingCart = () => {
+const ProductPage = () => {
+  const { cartItems, addToCart, removeOneFromCart, finalizePurchase } = useCart();
+
   return (
-    <div className="min-h-screen bg-[#f9f9f9] text-[#333] flex justify-center items-start p-5">
-      <div className="w-full max-w-[1200px] bg-white rounded-xl shadow-lg m-5 p-20 border-3 border-black">
-        <h2 className="text-4xl text-[#333] mb-8 text-center font-semibold">
-          Carrinho de Compras
-        </h2>
-
-        <div className="text-2xl text-center text-[#777] my-8">
-          Seu carrinho está vazio! Adicione produtos para começar a comprar.
-        </div>
-
-        <div className="flex justify-between text-2xl font-semibold text-[#333] mt-8 pt-5 border-t-2 border-[#f0f0f0]">
-          <p>Total Geral:</p>
-          <p>R$ 0,00</p>
-        </div>
-
-        <button 
-          className="w-full bg-[#2196F3] text-white py-4 text-2xl font-bold rounded-xl cursor-pointer mt-8 hover:bg-[#448b23] transition-colors duration-300"
-          onClick={() => alert('Finalizando compra...')}
-        >
-          Finalizar Compra
-        </button>
+    <div className="min-h-screen bg-gray-100">
+      <div className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl p-6 overflow-y-auto">
+        <h2 className="text-2xl font-bold mb-4">Carrinho</h2>
+        {cartItems.length === 0 ? (
+          <p className="text-gray-500">Seu carrinho está vazio</p>
+        ) : (
+          <>
+            <ul className="space-y-4 mb-4">
+              {cartItems.map((item) => (
+                <li key={item.id} className="flex justify-between items-center">
+                  <div>
+                    <h3 className="font-semibold">{item.name}</h3>
+                    <p className="text-sm text-gray-600">
+                      Qtd: {item.quantity} x R${item.price.toFixed(2)}
+                    </p>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={() => addToCart(item)}
+                      className="px-2 py-1 bg-green-500 text-white rounded"
+                    >
+                      +
+                    </button>
+                    <button
+                      onClick={() => removeOneFromCart(item.id)}
+                      className="px-2 py-1 bg-red-500 text-white rounded"
+                    >
+                      -
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className="border-t pt-4">
+              <div className="flex justify-between items-center mb-4">
+                <span className="font-bold">Total:</span>
+                <span className="font-bold text-xl">
+                  R$
+                  {cartItems
+                    .reduce(
+                      (total, item) => total + item.price * item.quantity,
+                      0
+                    )
+                    .toFixed(2)}
+                </span>
+              </div>
+              <button
+                onClick={finalizePurchase}
+                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                Finalizar Compra
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 };
 
-export default ShoppingCart;
+export default ProductPage;

@@ -8,7 +8,6 @@ import ProductPage from './src/components/pages/ProductPage.jsx'
 import ShoppingCart from './src/components/pages/ShoppingCart.jsx'
 import Salada from './src/components/pages/Salada.jsx';
 import Bolo from './src/components/pages/bolo.jsx';
-//import './src/styles/EstilosGerais.css'
 import './src/styles/Cabecalho.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
