@@ -1,5 +1,4 @@
-const connectToDatabase = require('./dbConfig');
-const sql = require('mssql');
+const { connectToDatabase } = require('./dbConfig');
 
 async function inserirPedido(codigoProduto, cpf, dataPedido) {
   // Validações dos parâmetros
@@ -13,18 +12,21 @@ async function inserirPedido(codigoProduto, cpf, dataPedido) {
     throw new Error('A data do pedido deve ser um objeto Date válido.');
   }
 
-  const pool = await connectToDatabase();
-  try {
-    await pool.request()
-      .input('CODIGO_PRODUTO', sql.VarChar(150), codigoProduto)
-      .input('CPF', sql.Char(11), cpf)
-      .input('DATAPEDIDO', sql.DateTime, dataPedido)
-      .query('INSERT INTO PEDIDOS (CODIGO_PRODUTO, CPF, DATAPEDIDO) VALUES (@CODIGO_PRODUTO, @CPF, @DATAPEDIDO)');
-    console.log('Pedido inserido com sucesso!');
-  } catch (error) {
-    console.error('Erro ao inserir pedido:', error);
-    throw error; // Repassa o erro para ser tratado onde a função for chamada
-  }
+  const db = await connectToDatabase();
+
+  return new Promise((resolve, reject) => {
+    const query = 'INSERT INTO PEDIDOS (CODIGO_PRODUTO, CPF, DATAPEDIDO) VALUES (?, ?, ?)';
+    db.run(query, [codigoProduto, cpf, dataPedido.toISOString()], (err) => {
+      if (err) {
+        console.error('Erro ao inserir pedido:', err);
+        reject(err);
+      } else {
+        console.log('Pedido inserido com sucesso!');
+        resolve();
+      }
+    });
+  });
 }
 
 module.exports = { inserirPedido };
+

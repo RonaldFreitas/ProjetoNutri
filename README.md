@@ -41,14 +41,14 @@ cd projeto_nutri
 npm install
 npm install bootstrap
 npm install express
-npm install mssql
-npm install msnodesqlv8
+npm install sqlite3
 npm install react-router-dom
 npm install react-bootstrap bootstrap
 npm install bootstrap @popperjs/core
 npm install @fortawesome/fontawesome-free
 npm install lucide-react
 npm run dev
+instalar extensão SQLite Viewer
 
 ```
 
@@ -56,3 +56,7 @@ npm run dev
 
 ```bash
 npm audit fix
+
+```
+### Se quiser ver o banco de dados no Vs Code
+- instalar extensão SQLite Viewer

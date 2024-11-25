@@ -68,12 +68,7 @@ const IMCCalculator = () => {
 
   return (
     <>
-      <header>
-        <div className="container">
-          <h1>Calculadora de IMC</h1>
-        </div>
-      </header>
-      
+
       <div className="centralizar">
         <section id="calculo-imc">
           <h2>Cálculo de IMC</h2>
