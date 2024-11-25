@@ -17,8 +17,6 @@ const ExamItem = ({ title, content, extraContent }) => {
   };
 
   return (
-    <>
-    <Cabecalho />
     <div className="exam">
       <h2>{title}</h2>
       <p>{content}</p>
@@ -35,8 +33,6 @@ const ExamItem = ({ title, content, extraContent }) => {
         </div>
       )}
     </div>
-    <Footer/>
-    </>
   );
 };
 
@@ -213,6 +209,8 @@ const ExamCard = () => {
   ];
 
   return (
+    <>
+    <Cabecalho />
     <div className="exam-card">
       <h1>Exames e Avaliações</h1>
       {exams.map((exam, index) => (
@@ -224,6 +222,8 @@ const ExamCard = () => {
         />
       ))}
     </div>
+    <Footer/>
+    </>
   );
 };
 

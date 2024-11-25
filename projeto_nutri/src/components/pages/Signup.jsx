@@ -12,7 +12,7 @@ import PerguntasFrequentes from "../homeComponents/PerguntasFrequentes.jsx"
 function Signup() {
     return (
         <>
-            <Carousel />
+            
         </>
 
 

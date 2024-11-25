@@ -18,7 +18,7 @@ const Cabecalho = () => {
         <ul><Link to="/imc">IMC</Link></ul>
         <ul><Link to="/produtos">Produtos</Link></ul>
         <ul><Link to="/carrinho"><ShoppingCart className="w-5 h-5 mr-1" /></Link></ul>
-        <ul><Link to="/login" className="btn btn-outline-light ml-3">Login e Cadastro</Link></ul>
+        <ul><Link to="/signin" className="btn btn-outline-light ml-3">Login e Cadastro</Link></ul>
       </nav>
     </header>
   );
