@@ -1,5 +1,5 @@
 const express = require('express');
-const { inserirUsuario } = require('./userController');
+const { inserirUsuario } = require('./dbuserController');
 const { inserirProduto } = require('./dbprodutoController');
 const { inserirPedido } = require('./dbpedidoController');
 
