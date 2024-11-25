@@ -2,7 +2,7 @@ import React from 'react';
 import Cabecalho from '../otherComponents/Cabecalho';
 import Footer from '../otherComponents/Footer';
 import { useCart } from "../contexts/CartContext";
-import { Button, Card, ListGroup, Row, Col, Container } from 'react-bootstrap'; // Importando os componentes do React Bootstrap
+import { Button, Card, ListGroup, Row, Col, Container } from 'react-bootstrap';
 
 const ShoppingCart = () => {
   const { cartItems, addToCart, removeOneFromCart, finalizePurchase } = useCart();
@@ -13,13 +13,12 @@ const ShoppingCart = () => {
       <div className="min-h-screen bg-light">
         <Container className="pt-5">
           <Row className="justify-content-center">
-            {/* Aumentei a largura do Card para ocupar praticamente toda a tela */}
-            <Col lg={11} md={10} xs={12} className="mb-4"> {/* Aumentei o lg para 11 e md para 10 */}
+            <Col lg={11} md={10} xs={12} className="mb-4">
               <Card className="shadow-lg">
                 <Card.Header className="text-center bg-primary text-white py-4">
                   <h2>Carrinho de Compras</h2>
                 </Card.Header>
-                <Card.Body className="py-5"> {/* Aumentei o padding interno */}
+                <Card.Body className="py-5">
                   {cartItems.length === 0 ? (
                     <p className="text-center text-muted">Seu carrinho está vazio</p>
                   ) : (
