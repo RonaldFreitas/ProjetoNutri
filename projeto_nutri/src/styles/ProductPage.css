@@ -1,55 +1,61 @@
 .container {
-    padding: 2rem; /* Example padding adjustment */
-  }
-  
-  .grid-cols-1,
-  .md:grid-cols-2,
-  .lg:grid-cols-3,
-  .xl:grid-cols-4 {
-    gap: 2rem; /* Example gap adjustment */
-  }
-  
-  .product-item { /* Adjust class name as needed */
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .product-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.07);
-  }
-  
-  .product-image {
-    width: 100%;
-    height: 200px; /* Example image height adjustment */
-    object-fit: cover;
-  }
-  
-  .product-info {
-    padding: 1rem; /* Example padding adjustment */
-  }
-  
-  .product-title {
-    font-size: 1rem; /* Example heading size adjustment */
-    font-weight: bold;
-    margin-bottom: 0.5rem; /* Example margin adjustment */
-  }
-  
-  .product-description {
-    font-size: 0.875rem; /* Example text size adjustment */
-    color: #6c757d;
-    margin-bottom: 1rem; /* Example margin adjustment */
-  }
-  
-  .product-price {
-    font-size: 1rem; /* Example price size adjustment */
-    font-weight: bold;
-    color: #28a745;
-  }
-  
-  .product-button {
-    background-color: #17a2b8;
-    color: white;
-    padding: 0.5rem 1;}
+  padding: 2rem; /* Ajuste de padding */
+}
+
+.grid-cols-1,
+.sm\:grid-cols-2,
+.md\:grid-cols-2,
+.lg\:grid-cols-2 {
+  gap: 2rem; /* Ajuste de gap entre as colunas */
+}
+
+.product-item { 
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.product-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.07);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px; /* Ajuste no tamanho da imagem */
+  object-fit: cover; /* Mantém a proporção da imagem sem distorcer */
+}
+
+.product-info {
+  padding: 1rem; /* Ajuste de padding */
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.product-button {
+  background-color: #17a2b8;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.img {
+  width: 100%;
+  height: 200px;
+}
