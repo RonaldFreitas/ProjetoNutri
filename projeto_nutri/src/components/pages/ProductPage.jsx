@@ -11,11 +11,16 @@ import creatina from "../../assets/creatina.webp"
 import wheyProtein from "../../assets/whey.webp"
 import cacau from "../../assets/cacau.jpg"
 import mixCastanha from "../../assets/mix-de-castanha-tiny.jpg"
+import { useCart } from '../contexts/CartContext';
+
 
 const ProductPage = () => {
+  const { addToCart } = useCart();
+
+  {/*const ProductPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartVisible, setIsCartVisible] = useState(false);
-
+*/}
   const products = [
     {
       id: 1,
@@ -89,6 +94,10 @@ const ProductPage = () => {
     }
   ];
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
+  {/*}
   const addToCart = (product) => {
     setCartItems(prevItems => {
       const existingItem = prevItems.find(item => item.id === product.id);
@@ -109,35 +118,35 @@ const ProductPage = () => {
   const handleCheckout = () => {
     alert('Compra finalizada! Total: R$' + totalPrice.toFixed(2));
     setCartItems([]);
-  };
+  }; */}
 
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      
-        <div className="container mx-auto">
-          <p className="text-4xl font-bold text-center mb-2">Produtos de Nutricionismo</p>
-          <p className="text-center mb-6">Descubra nossos produtos para uma alimentação saudável</p>
 
-          <nav className="flex justify-center items-center space-x-6">
-            
-            <button
-              onClick={() => setIsCartVisible(!isCartVisible)}
-              className="hover:text-blue-200 transition-colors flex items-center"
-            >
+      <div className="container mx-auto">
+        <p className="text-4xl font-bold text-center mb-2">Produtos de Nutricionismo</p>
+        <p className="text-center mb-6">Descubra nossos produtos para uma alimentação saudável</p>
 
-              <span className="bg-red-500 rounded-full px-2 py-1 text-xs">
-                {cartItems.reduce((total, item) => total + item.quantity, 0)}
-              </span>
-            </button>
+        <nav className="flex justify-center items-center space-x-6">
 
-            <button className="flex items-center border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition-colors">
-              <LogIn className="w-5 h-5 mr-2" />
-              Login
-            </button>
-          </nav>
-        </div>
-      
+          <button
+            onClick={() => setIsCartVisible(!isCartVisible)}
+            className="hover:text-blue-200 transition-colors flex items-center"
+          >
+
+            <span className="bg-red-500 rounded-full px-2 py-1 text-xs">
+              {cartItems.reduce((total, item) => total + item.quantity, 0)}
+            </span>
+          </button>
+
+          <button className="flex items-center border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800 transition-colors">
+            <LogIn className="w-5 h-5 mr-2" />
+            Login
+          </button>
+        </nav>
+      </div>
+
 
       {/* Products Grid */}
       <div className="container mx-auto px-4 py-8">
@@ -147,21 +156,22 @@ const ProductPage = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-24 object-cover"/>
-                
+                className="w-full h-24 object-cover" />
+
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
                 <p className="text-gray-600 mb-4">{product.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-bold text-green-600">
-                    R$ {product.price.toFixed(2)}
-                  </span>
-                  <button onClick={() => addToCart(product)} 
-                  className="bg-blue-600 text-white px-2 py-1 rounded 
-                  hover:bg-blue-700 transition-colors">
-                    Comprar
-                  </button>
-
+                <div>
+                  <h1>Produtos</h1>
+                  <ul>
+                    {products.map((product) => (
+                      <li key={product.id}>
+                        <h2>{product.name}</h2>
+                        <p>Preço: R$ {product.price.toFixed(2)}</p>
+                        <button onClick={() => handleAddToCart(product)}>Comprar</button>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
