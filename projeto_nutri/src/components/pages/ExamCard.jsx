@@ -4,6 +4,8 @@ import sangue from "../../assets/sangue.jpg";
 import ComposicaoCorporal from "../../assets/Composição-corporal-840x400.jpg";
 import sanintoleranciague from "../../assets/como-identificar-uma-alergia-alimentar-1591x895.jpeg";
 import microbiota from "../../assets/Exame-de-Microbiota-Intestinal-Bio-Check-Up-.jpg";
+import Cabecalho from '../otherComponents/Cabecalho.jsx';
+import Footer from '../otherComponents/Footer.jsx';
 
 // Componente para cada item de exame
 const ExamItem = ({ title, content, extraContent }) => {
@@ -15,6 +17,8 @@ const ExamItem = ({ title, content, extraContent }) => {
   };
 
   return (
+    <>
+    <Cabecalho />
     <div className="exam">
       <h2>{title}</h2>
       <p>{content}</p>
@@ -31,6 +35,8 @@ const ExamItem = ({ title, content, extraContent }) => {
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 

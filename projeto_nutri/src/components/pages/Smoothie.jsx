@@ -1,10 +1,13 @@
 import React from "react";
 import smoothieImg from "../../assets/FV_receita-Smoothie_Green_01.avif";
 import '../../styles/Smoothie.css'
+import Cabecalho from '../otherComponents/Cabecalho.jsx';
+import Footer from '../otherComponents/Footer.jsx';
 
 function Smoothie() {
     return (
         <>
+        <Cabecalho />
             <header>
                 <h1>Smoothie Verde</h1>
             </header>
@@ -18,7 +21,7 @@ function Smoothie() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                ></iframe>
+                    ></iframe>
             </div>
 
             <div className="container">
@@ -57,6 +60,7 @@ function Smoothie() {
                         </div>
                     </div>
             </div>
+        <Footer/>
         </>
     );
 }

@@ -4,6 +4,8 @@ import '../../styles/Recipes.css';
 import salada from '../../assets/salade.png'
 import suco from '../../assets/suce.jpeg'
 import bolo from '../../assets/bolo-de-banana.jpg'
+import Cabecalho from '../otherComponents/Cabecalho.jsx';
+import Footer from '../otherComponents/Footer.jsx';
 
 {/* Fazer os componentes dos "links" e importar acima e levar para a const*/}
 
@@ -33,6 +35,8 @@ const recipesData = [
 
 function Recipes() {
   return (
+    <>
+    <Cabecalho />
     <div className="recipes-page">
 
       <main className="recipes-container">
@@ -43,7 +47,7 @@ function Recipes() {
               alt={recipe.title}
               link to={recipe.link}
               className="recipe-image"
-            />
+              />
             <div className="recipe-content">
               <h3 className="recipe-title">{recipe.title}</h3>
               <p className="recipe-description">{recipe.description}</p>
@@ -57,6 +61,8 @@ function Recipes() {
 
     
     </div>
+    <Footer/>
+    </>
   );
 }
 

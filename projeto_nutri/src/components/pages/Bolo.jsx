@@ -1,10 +1,13 @@
 import React from "react";
 import boloImg from "../../assets/bolo integral.png";
 import '../../styles/Bolo.css'
+import Cabecalho from '../otherComponents/Cabecalho.jsx';
+import Footer from '../otherComponents/Footer.jsx';
 
 function Bolo() {
     return (
         <>
+        <Cabecalho />
             <header>
                 <h1>Bolo de Banana Integral</h1>
             </header>
@@ -19,7 +22,7 @@ function Bolo() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                ></iframe>
+                    ></iframe>
             </div>
 
             <div className="container">
@@ -61,6 +64,7 @@ function Bolo() {
                     </div>
                 </div>
             </div>
+        <Footer/>
         </>
     );
 }

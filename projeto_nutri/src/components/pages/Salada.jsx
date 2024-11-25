@@ -1,9 +1,12 @@
 import React from "react";
 import saladaImg from "../../assets/usuario-4082-1d5109fcf754c91ce076bef525c565cf.jpg";
+import Cabecalho from '../otherComponents/Cabecalho.jsx';
+import Footer from '../otherComponents/Footer.jsx';
 
 function Salada() {
   return (
     <>
+    <Cabecalho />
       <header>
         <h1>Salada de Quinoa</h1>
       </header>
@@ -18,7 +21,7 @@ function Salada() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-        ></iframe>
+          ></iframe>
       </div>
 
       <div className="container">
@@ -72,6 +75,7 @@ function Salada() {
           </div>
         </div>
       </div>
+    <Footer/>
     </>
   );
 }

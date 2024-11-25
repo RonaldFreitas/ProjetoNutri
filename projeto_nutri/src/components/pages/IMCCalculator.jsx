@@ -1,6 +1,8 @@
 // src/components/IMCCalculator.jsx
 import { useState } from 'react';
 import '../../styles/IMCCalculator.css';
+import Cabecalho from '../otherComponents/Cabecalho.jsx';
+import Footer from '../otherComponents/Footer.jsx';
 
 
 const IMCCalculator = () => {
@@ -10,10 +12,10 @@ const IMCCalculator = () => {
     altura: '',
     peso: ''
   });
-
+  
   const [resultado, setResultado] = useState(null);
   const [recomendacao, setRecomendacao] = useState('');
-
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -21,7 +23,7 @@ const IMCCalculator = () => {
       [name]: value
     }));
   };
-
+  
   const calcularIMC = (e) => {
     e.preventDefault();
     
@@ -33,12 +35,12 @@ const IMCCalculator = () => {
       alert('Por favor, insira valores válidos');
       return;
     }
-
+    
     const imc = peso / (alturaMetros * alturaMetros);
     
     let categoria = '';
     let recomendacaoTexto = '';
-
+    
     if (imc < 18.5) {
       categoria = 'Abaixo do peso';
       recomendacaoTexto = 'Recomendação: Procure um nutricionista para desenvolver um plano de ganho de peso saudável.';
@@ -58,16 +60,17 @@ const IMCCalculator = () => {
       categoria = 'Obesidade grau 3';
       recomendacaoTexto = 'Recomendação: Procure atendimento médico especializado com urgência.';
     }
-
+    
     setResultado({
       imc: imc.toFixed(1),
       categoria
     });
     setRecomendacao(recomendacaoTexto);
   };
-
+  
   return (
     <>
+    <Cabecalho />
 
       <div className="centralizar">
         <section id="calculo-imc">
@@ -81,7 +84,7 @@ const IMCCalculator = () => {
                 name="sexo"
                 value={formData.sexo}
                 onChange={handleInputChange}
-              >
+                >
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>
               </select>
@@ -97,7 +100,7 @@ const IMCCalculator = () => {
                 onChange={handleInputChange}
                 required
                 min="0"
-              />
+                />
             </div>
 
             <div className="form-group">
@@ -110,7 +113,7 @@ const IMCCalculator = () => {
                 onChange={handleInputChange}
                 required
                 min="0"
-              />
+                />
             </div>
 
             <div className="form-group">
@@ -124,7 +127,7 @@ const IMCCalculator = () => {
                 required
                 min="0"
                 step="0.1"
-              />
+                />
             </div>
 
             <button type="submit">Calcular IMC</button>
@@ -144,6 +147,7 @@ const IMCCalculator = () => {
           )}
         </section>
       </div>
+    <Footer/>
     </>
   );
 };

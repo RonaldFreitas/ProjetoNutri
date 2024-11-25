@@ -7,24 +7,16 @@ import Servicos from "../homeComponents/Servicos.jsx"
 import Variedades from "../homeComponents/Variedades.jsx"
 import Contato from "../homeComponents/Contato.jsx";
 import PerguntasFrequentes from "../homeComponents/PerguntasFrequentes.jsx"
-import Cabecalho from '../otherComponents/Cabecalho.jsx';
-import Footer from '../otherComponents/Footer.jsx';
 
 
-function Home() {
+function Signup() {
     return (
         <>
-            <Cabecalho />
             <Carousel />
-            <Quadradinhos />
-            <Conheca />
-            <Servicos />
-            <Variedades />
-            <Contato />
-            <PerguntasFrequentes />
-            <Footer/>
         </>
+
+
     )
 };
 
-export default Home;
+export default Signup;
