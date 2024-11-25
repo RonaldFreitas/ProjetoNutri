@@ -1,0 +1,66 @@
+/* Estilo base para os quadradinhos */
+.banner-item {
+    position: relative; /* Necessário para a sobreposição */
+    border-radius: 20px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse as bordas arredondadas */
+    padding: 0; /* Remover padding para garantir que o tamanho da imagem cubra o espaço */
+    width: 100%; /* Ajuste para o tamanho do container */
+    text-align: center; /* Centraliza o conteúdo */
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito de hover para os quadradinhos */
+.banner-item:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+}
+
+/* Estilo das imagens dentro dos quadradinhos */
+.banner-img {
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: 100%; /* Garante que a imagem tenha a altura do card */
+    object-fit: cover; /* A imagem cobre o card sem distorcer */
+    border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior da imagem */
+    margin-bottom: 0; /* Remover a margem inferior entre a imagem e o texto */
+}
+
+/* Estilo do texto dentro do card (titulo e descrição) */
+.banner-body {
+    padding: 15px; /* Adicionando padding para o conteúdo abaixo da imagem */
+    border-radius: 0 0 20px 20px; /* Borda arredondada na parte inferior */
+    background-color: #fff; /* Fundo branco para o texto */
+}
+
+.banner-body .meu-paragrafo {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Responsividade: quadradinhos ficam maiores em telas menores */
+@media (max-width: 768px) {
+    .banner-item {
+        width: 100%; /* Faz os cards ocuparem toda a largura em telas pequenas */
+    }
+}
+
+/* Overlay de cor quando passar o mouse */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Sobreposição semitransparente */
+    display: none; /* Oculta a sobreposição por padrão */
+    transition: all 0.3s ease;
+}
+
+/* Exibe a sobreposição ao passar o mouse */
+.banner-item:hover .overlay {
+    display: block; /* Torna a sobreposição visível */
+}

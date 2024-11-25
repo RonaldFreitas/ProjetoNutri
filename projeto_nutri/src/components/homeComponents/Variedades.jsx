@@ -1,6 +1,5 @@
 import React from "react";
-import "../../styles/EstilosGerais.css";
-import { Link } from "react-router-dom"; // Importe o Link do React Router
+import { Link } from "react-router-dom"; // Usando Link para navegação
 
 function Variedades() {
   return (
@@ -9,59 +8,65 @@ function Variedades() {
         <h2><b>Variedades</b></h2>
         <br />
 
-        <div className="row justify-content-center">
-          <div className="container d-flex justify-content-around">
-            {/* Seção Produtos */}
-            <div className="box fade-in banner-item">
-              <Link to="/produtos"> 
-                <div className="overlay"></div>
+        <div className="d-flex justify-content-around flex-wrap">
+          {/* Card de Produtos */}
+          <div className="banner-item">
+            <Link to="/produtos">
+              <div className="overlay"></div>
+              <img
+                src="https://i0.wp.com/naturvida.com.br/wp-content/uploads/2023/08/4.jpg?fit=1080%2C1080&ssl=1"
+                alt="Produtos"
+                className="banner-img"
+              />
+              <div className="banner-body">
                 <p className="meu-paragrafo">Produtos</p>
-                <img
-                  src="https://i0.wp.com/naturvida.com.br/wp-content/uploads/2023/08/4.jpg?fit=1080%2C1080&ssl=1"
-                  alt="Produtos"
-                  className="banner-img"
-                />
-              </Link>
-            </div>
+              </div>
+            </Link>
+          </div>
 
-            {/* Seção Exames */}
-            <div className="box fade-in banner-item">
-              <Link to="/exames"> 
-                <div className="overlay"></div>
+          {/* Card de Exames */}
+          <div className="banner-item">
+            <Link to="/exames">
+              <div className="overlay"></div>
+              <img
+                src="https://sanaresst.com.br/wp-content/uploads/2018/10/exame-medico-ocupacional-1046x697.jpg"
+                alt="Exames"
+                className="banner-img"
+              />
+              <div className="banner-body">
                 <p className="meu-paragrafo">Exames</p>
-                <img
-                  src="https://sanaresst.com.br/wp-content/uploads/2018/10/exame-medico-ocupacional-1046x697.jpg"
-                  alt="Exames"
-                  className="banner-img"
-                />
-              </Link>
-            </div>
+              </div>
+            </Link>
+          </div>
 
-            {/* Seção Receitas */}
-            <div className="box fade-in banner-item">
-              <Link to="/receitas">
-                <div className="overlay"></div>
+          {/* Card de Receitas */}
+          <div className="banner-item">
+            <Link to="/receitas">
+              <div className="overlay"></div>
+              <img
+                src="https://media.gazetadopovo.com.br/2024/03/01184019/flay-leigos-de-nozes-e-legumes-960x540.jpg"
+                alt="Receitas"
+                className="banner-img"
+              />
+              <div className="banner-body">
                 <p className="meu-paragrafo">Receitas</p>
-                <img
-                  src="https://media.gazetadopovo.com.br/2024/03/01184019/flay-leigos-de-nozes-e-legumes-960x540.jpg"
-                  alt="Receitas"
-                  className="banner-img"
-                />
-              </Link>
-            </div>
+              </div>
+            </Link>
+          </div>
 
-            {/* Seção IMC */}
-            <div className="box fade-in banner-item">
-              <Link to="/imc">
-                <div className="overlay"></div>
+          {/* Card de IMC */}
+          <div className="banner-item">
+            <Link to="/imc">
+              <div className="overlay"></div>
+              <img
+                src="https://balancadigital.info/wp-content/uploads/2023/05/qual-a-balanca-mais-precisa-para-se-pesar.png"
+                alt="IMC"
+                className="banner-img"
+              />
+              <div className="banner-body">
                 <p className="meu-paragrafo">Calculadora IMC</p>
-                <img
-                  src="https://balancadigital.info/wp-content/uploads/2023/05/qual-a-balanca-mais-precisa-para-se-pesar.png"
-                  alt="IMC"
-                  className="banner-img"
-                />
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
