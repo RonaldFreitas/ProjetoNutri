@@ -56,3 +56,7 @@ instalar extensão SQLite Viewer
 
 ```bash
 npm audit fix
+
+```
+### Se quiser ver o banco de dados no Vs Code
+- instalar extensão SQLite Viewer
