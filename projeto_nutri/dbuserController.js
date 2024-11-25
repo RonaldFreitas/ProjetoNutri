@@ -17,5 +17,26 @@ async function inserirUsuario(cpf, nome, email, senha) {
   });
 }
 
-module.exports = { inserirUsuario };
+async function checkUsuario(email, senha) {
+  const db = await connectToDatabase();
+
+  return new Promise((resolve, reject) => {
+    const query = 'SELECT * FROM USUARIOS WHERE EMAIL = ? AND SENHA = ?';
+    db.get(query, [email, senha], (err, row) => {
+      if (err) {
+        console.error('Erro ao consultar usuário:', err);
+        reject(err);
+      } else {
+        if (row) {
+          resolve(row); 
+        } else {
+          resolve(null); 
+        }
+      }
+    });
+  });
+}
+
+module.exports = { inserirUsuario, checkUsuario };
+
 

@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^6.7.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
     "express": "^4.21.1",
     "lucide-react": "^0.460.0",
     "msnodesqlv8": "^4.4.0",

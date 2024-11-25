@@ -1,27 +1,54 @@
 const express = require('express');
-const { inserirUsuario } = require('./dbuserController');
-const { inserirProduto } = require('./dbprodutoController');
-const { inserirPedido } = require('./dbpedidoController');
+const { inserirUsuario, checkUsuario } = require('./dbuserController'); // Certifique-se de que está importando corretamente
+const cors = require('cors');
 
+// Inicialize o app com express()
 const app = express();
-const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Bem-vindo ao ProjetoNutri!');
-});
+// Middleware para parsing do JSON e CORS
+app.use(cors());
+app.use(express.json());
 
-// Exemplo de uso das funções
-(async () => {
-  try {
-    await inserirUsuario('40028922000', 'Babidi do java', 'olhaondeagarenabotafisica@gmail.com', 'vampirodanet');
-    await inserirProduto('P005', 'Minduim torrado', '1', 38.00, 5);
-    await inserirPedido('P001', '12345678901', new Date());
-  } catch (error) {
-    console.error('Erro durante a execução de exemplos:', error.message);
+// Rota de Signup
+app.post('/signup', async (req, res) => {
+  const { cpf, name, email, password } = req.body;
+
+  if (!cpf || !name || !email || !password) {
+    return res.status(400).json({ message: 'Todos os campos são obrigatórios!' });
   }
-})();
 
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${3000}`);
+  try {
+    await inserirUsuario(cpf, name, email, password);
+    res.status(200).json({ message: 'Usuário cadastrado com sucesso!' });
+  } catch (error) {
+    console.error('Erro ao cadastrar usuário:', error.message);
+    res.status(500).json({ message: 'Erro ao cadastrar usuário. Tente novamente mais tarde.' });
+  }
 });
+
+// Rota de Login
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'E-mail e senha são obrigatórios!' });
+  }
+
+  try {
+    const user = await checkUsuario(email, password);
+    if (user) {
+      res.status(200).json({ message: 'Login bem-sucedido' }); 
+    } else {
+      res.status(401).json({ message: 'Credenciais inválidas' }); 
+    }
+  } catch (error) {
+    console.error('Erro ao validar usuário:', error);
+    res.status(500).json({ message: 'Erro ao fazer login. Tente novamente.' });
+  }
+});
+
+// Inicia o servidor
+app.listen(3000, () => console.log('Servidor rodando em http://localhost:3000'));
+
+
 

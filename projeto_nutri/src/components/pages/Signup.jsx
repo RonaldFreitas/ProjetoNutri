@@ -1,31 +1,49 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Navegação para outras páginas
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  // Definindo os estados para os campos de entrada
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const navigate = useNavigate(); // Navegação após o cadastro
+  const navigate = useNavigate();
 
-  // Função para validar e registrar o usuário
-  const handleSignup = (e) => {
+
+  const handleSignup = async (e) => {
     e.preventDefault();
-
-    // Validação simples de senha
+  
     if (password !== confirmPassword) {
-      alert("As senhas não coincidem");
+      alert('As senhas não coincidem');
       return;
     }
-
-    // Aqui você pode adicionar a lógica para enviar os dados para o servidor
-    // Por enquanto, vamos simular um cadastro bem-sucedido:
-    console.log('Nome:', name, 'Email:', email, 'Senha:', password);
-
-    // Redirecionando para a tela de login ou dashboard após o cadastro
-    navigate('/login');
+  
+    try {
+      const response = await fetch('http://localhost:3000/signup', { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert(data.message); 
+        navigate('/signin'); 
+      } else {
+        alert(data.message); 
+      }
+    } catch (error) {
+      console.error('Erro ao cadastrar usuário:', error);
+      alert('Erro ao cadastrar. Tente novamente.');
+    }
   };
+  
 
   return (
     <div>
@@ -35,10 +53,9 @@ const Signup = () => {
           <label>Nome:</label>
           <input
             type="text"
-            id="name"
             placeholder="Digite seu nome"
             value={name}
-            onChange={(e) => setName(e.target.value)} // Atualiza o nome
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -46,10 +63,9 @@ const Signup = () => {
           <label>E-mail:</label>
           <input
             type="email"
-            id="email"
             placeholder="Digite seu e-mail"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} // Atualiza o email
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -57,10 +73,9 @@ const Signup = () => {
           <label>Senha:</label>
           <input
             type="password"
-            id="password"
             placeholder="Digite sua senha"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} // Atualiza a senha
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
@@ -68,10 +83,9 @@ const Signup = () => {
           <label>Confirmar Senha:</label>
           <input
             type="password"
-            id="confirmPassword"
             placeholder="Confirme sua senha"
             value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)} // Atualiza a confirmação de senha
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </div>

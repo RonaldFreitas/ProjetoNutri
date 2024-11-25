@@ -6,10 +6,35 @@ const Signin = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
+
         console.log('Email:', email, 'Password:', password);
-        navigate('/'); 
+
+        try {
+            const response = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('Login bem-sucedido!');
+                navigate('/'); 
+            } else {
+                alert(data.message); 
+            }
+        } catch (error) {
+            console.error('Erro ao fazer login:', error);
+            alert('Erro ao fazer login. Tente novamente.');
+        }
     };
 
     return (
@@ -23,7 +48,7 @@ const Signin = () => {
                         id="email"
                         placeholder="Digite seu e-mail"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)} // Atualiza o estado
+                        onChange={(e) => setEmail(e.target.value)} 
                         required
                     />
                 </div>
@@ -34,7 +59,7 @@ const Signin = () => {
                         id="password"
                         placeholder="Digite sua senha"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)} // Atualiza o estado
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
