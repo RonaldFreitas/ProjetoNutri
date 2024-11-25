@@ -1,0 +1,49 @@
+/* Estilos para o Accordion */
+.faq-accordion {
+    width: 80%; /* Largura de 60% */
+    margin: 0 auto; /* Centraliza o Accordion */
+    background-color: #fff; /* Cor de fundo do Accordion */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor do Accordion */
+    padding: 20px; /* Espaçamento interno */
+  }
+  
+  /* Estilo para o cabeçalho de cada item do Accordion */
+  .faq-accordion .accordion-header {
+    background-color: #e0ecf7; /* Cor de fundo azul claro */
+    font-size: 15px; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    color: #333; /* Cor do texto */
+    cursor: pointer; /* Cursor em forma de mão ao passar por cima */
+    border-radius: 8px 8px 0 0; /* Bordas arredondadas no topo */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+  }
+  
+  /* Efeito ao passar o mouse sobre o cabeçalho */
+  .faq-accordion .accordion-header:hover {
+    background-color: #cce1f9; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento suave */
+  }
+  
+  /* Quando o Accordion estiver expandido */
+  .faq-accordion .accordion-button:not(.collapsed) {
+    background-color: #cce1f9; /* Cor de fundo quando expandido */
+    color: #333; /* Cor do texto quando expandido */
+  }
+  
+  /* Estilo para o corpo do Accordion - Cor de fundo */
+  .faq-accordion .accordion-body {
+    background-color: #f0f0f0; /* Cor de fundo do corpo */
+    padding: 15px; /* Espaçamento interno */
+    font-size: 20px; /* Tamanho do texto */
+    color: #555; /* Cor do texto */
+    border-radius: 0 0 8px 8px; /* Bordas arredondadas na parte inferior */
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .faq-accordion {
+      width: 90%; /* Aumenta a largura para 90% em telas pequenas */
+    }
+  }
+  
