@@ -42,6 +42,7 @@ npm install
 npm install bootstrap
 npm install express
 npm install sqlite3
+npm install styled-components
 npm install react-router-dom
 npm install react-bootstrap bootstrap
 npm install bootstrap @popperjs/core
