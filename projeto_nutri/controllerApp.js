@@ -37,9 +37,12 @@ app.post('/login', async (req, res) => {
   try {
     const user = await checkUsuario(email, password);
     if (user) {
-      res.status(200).json({ message: 'Login bem-sucedido' }); 
+      res.status(200).json({
+        message: 'Login bem-sucedido',
+        name: user.NOME,  // Retorna o nome do usuário
+      });
     } else {
-      res.status(401).json({ message: 'Credenciais inválidas' }); 
+      res.status(401).json({ message: 'Credenciais inválidas' });
     }
   } catch (error) {
     console.error('Erro ao validar usuário:', error);

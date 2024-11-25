@@ -9,6 +9,7 @@ const Signin = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
 
+        // Verificando os dados que serão enviados ao servidor
         console.log('Email:', email, 'Password:', password);
 
         try {
@@ -26,10 +27,18 @@ const Signin = () => {
             const data = await response.json();
 
             if (response.ok) {
-                alert('Login bem-sucedido!');
-                navigate('/'); 
+                // Verifique os dados retornados pelo servidor
+                console.log('Dados recebidos do servidor:', data);
+                
+                if (data.name) {
+                    localStorage.setItem("user", JSON.stringify({ name: data.name }));
+                    alert('Login bem-sucedido!');
+                    navigate("/"); // Redireciona para a página inicial
+                } else {
+                    alert('Nome do usuário não encontrado.');
+                }
             } else {
-                alert(data.message); 
+                alert(data.message || 'Erro ao fazer login. Tente novamente.');
             }
         } catch (error) {
             console.error('Erro ao fazer login:', error);

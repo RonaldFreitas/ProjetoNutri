@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const formatCPF = (cpf) => {
+    return cpf
+      .replace(/\D/g, '') 
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d)/, '$1.$2') 
+      .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+  };
+
 const Signup = () => {
+  const [cpf, setCpf] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,6 +33,7 @@ const Signup = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          cpf,
           name,
           email,
           password,
@@ -49,6 +59,16 @@ const Signup = () => {
     <div>
       <h2>Cadastro</h2>
       <form onSubmit={handleSignup}>
+        <div>
+          <label>CPF:</label>
+          <input
+            type="text"
+            placeholder="Digite seu CPF"
+            value={cpf}
+            onChange={(e) => setCpf(formatCPF(e.target.value))} 
+            required
+          />
+        </div>
         <div>
           <label>Nome:</label>
           <input
