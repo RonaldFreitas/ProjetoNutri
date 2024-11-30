@@ -2,71 +2,93 @@ import React from 'react';
 import Cabecalho from '../otherComponents/Cabecalho';
 import Footer from '../otherComponents/Footer';
 import { useCart } from "../contexts/CartContext";
+import { Button, Card, ListGroup, Row, Col, Container } from 'react-bootstrap';
 
 const ShoppingCart = () => {
   const { cartItems, addToCart, removeOneFromCart, finalizePurchase } = useCart();
 
   return (
     <>
-    <Cabecalho/>
-    <div className="min-h-screen bg-gray-100">
-      <div className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl p-6 overflow-y-auto">
-        <h2 className="text-2xl font-bold mb-4">Carrinho</h2>
-        {cartItems.length === 0 ? (
-          <p className="text-gray-500">Seu carrinho está vazio</p>
-        ) : (
-          <>
-            <ul className="space-y-4 mb-4">
-              {cartItems.map((item) => (
-                <li key={item.id} className="flex justify-between items-center">
-                  <div>
-                    <h3 className="font-semibold">{item.name}</h3>
-                    <p className="text-sm text-gray-600">
-                      Qtd: {item.quantity} x R${item.price.toFixed(2)}
-                    </p>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <button
-                      onClick={() => addToCart(item)}
-                      className="px-2 py-1 bg-green-500 text-white rounded"
-                    >
-                      +
-                    </button>
-                    <button
-                      onClick={() => removeOneFromCart(item.id)}
-                      className="px-2 py-1 bg-red-500 text-white rounded"
-                    >
-                      -
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="border-t pt-4">
-              <div className="flex justify-between items-center mb-4">
-                <span className="font-bold">Total:</span>
-                <span className="font-bold text-xl">
-                  R$
-                  {cartItems
-                    .reduce(
-                      (total, item) => total + item.price * item.quantity,
-                      0
-                    )
-                    .toFixed(2)}
-                </span>
-              </div>
-              <button
-                onClick={finalizePurchase}
-                className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Finalizar Compra
-              </button>
-            </div>
-          </>
-        )}
+      <Cabecalho />
+      <div className="min-h-screen bg-light">
+        <Container className="pt-5">
+          <Row className="justify-content-center">
+            <Col lg={11} md={10} xs={12} className="mb-4">
+              <Card className="shadow-lg">
+                <Card.Header className="text-center bg-primary text-white py-4">
+                  <h2>Carrinho de Compras</h2>
+                </Card.Header>
+                <Card.Body className="py-5">
+                  {cartItems.length === 0 ? (
+                    <p className="text-center text-muted">Seu carrinho está vazio</p>
+                  ) : (
+                    <>
+                      <ListGroup variant="flush">
+                        {cartItems.map((item) => (
+                          <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center py-4">
+                            <div>
+                              <h5 className="mb-2">{item.name}</h5>
+                              <p className="text-muted">
+                                Qtd: {item.quantity} x R${item.price.toFixed(2)}
+                              </p>
+                            </div>
+                            <div>
+                              <Button
+                                variant="success"
+                                size="sm"
+                                onClick={() => addToCart(item)}
+                                className="mx-2"
+                              >
+                                +
+                              </Button>
+                              <Button
+                                variant="danger"
+                                size="sm"
+                                onClick={() => removeOneFromCart(item.id)}
+                                className="mx-2"
+                              >
+                                -
+                              </Button>
+                            </div>
+                          </ListGroup.Item>
+                        ))}
+                      </ListGroup>
+
+                      <div className="border-top mt-5 pt-4">
+                        <Row className="mb-4">
+                          <Col xs={6}>
+                            <strong>Total:</strong>
+                          </Col>
+                          <Col xs={6} className="text-right">
+                            <strong>
+                              R$
+                              {cartItems
+                                .reduce(
+                                  (total, item) => total + item.price * item.quantity,
+                                  0
+                                )
+                                .toFixed(2)}
+                            </strong>
+                          </Col>
+                        </Row>
+                        <Button
+                          variant="primary"
+                          size="lg"  
+                          className="w-100 py-3"  
+                          onClick={finalizePurchase}
+                        >
+                          Finalizar Compra
+                        </Button>
+                      </div>
+                    </>
+                  )}
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 };
